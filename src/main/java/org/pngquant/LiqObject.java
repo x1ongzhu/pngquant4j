@@ -27,6 +27,9 @@ abstract class LiqObject {
         FileUtils.copyInputStreamToFile(
                 getResourceAsStream(File.separator + "libimagequant" + File.separator + "libimagequant.jnilib"),
                 new File(directory, "libimagequant.jnilib"));
+        FileUtils.copyInputStreamToFile(
+                getResourceAsStream(File.separator + "libimagequant" + File.separator + "libimagequant.so"),
+                new File(directory, "libimagequant.so"));
 
         if (System.getProperty("os.name").toLowerCase().contains("mac")) {
             System.load(directory.getPath() + File.separator + "libimagequant.jnilib");
